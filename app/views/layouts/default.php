@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>DietCake Message Board</title>
+    <head>
+        <meta charset="utf-8">
+        <title>CMS Panel</title>
 
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      body {
-        padding-top: 60px;
-      }
-    </style>
-  </head>
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <style>
+            body {
+                padding-top: 60px;
+            }
+        </style>
+    </head>
 
-  <body>
+    <body>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="<?php eh(url('/')) ?>">DietCake Message Board</a>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container"><a class="brand" href="<?php eh(url('/')) ?>">CMS Panel</a></div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="container">
+        <div class="container">
 
-      <?php echo $_content_ ?>
+        <?php echo $_content_ ?>
 
-    </div>
+        </div>
 
-    <script>
-    console.log(<?php eh(round(microtime(true) - TIME_START, 3)) ?> + 'sec');
-    </script>
+        <script>console.log(<?php eh(round(microtime(true) - TIME_START, 3)) ?> + 'sec');</script>
 
-  </body>
+    </body>
 </html>

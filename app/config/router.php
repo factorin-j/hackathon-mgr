@@ -43,3 +43,9 @@ function url($url = '', $params = array())
 
     return $url;
 }
+
+function redirect($url)
+{
+    header('Location: ' . $url);
+    exit;
+}
