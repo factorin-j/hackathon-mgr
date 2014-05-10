@@ -12,8 +12,8 @@ class Inquiry extends AppModel
     public static function get($id)
     {
         $con = DB::conn();
-        $inquiry = $con->row('SELECT * FROM inquiry WHERE id = ?', array('id' => $id));
-        return (!$inquiry) ? null : new self($inquiry);
+        $inquiry = $con->row('SELECT * FROM inquiry WHERE id = ?', array($id));
+        return (!$inquiry) ? null : $inquiry;
     }
 
     public static function getListAll()

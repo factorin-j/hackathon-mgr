@@ -19,7 +19,7 @@
                 <pre><?php echo $inquiry['message'] ?></pre>
                 <form action="/inquiry/reply" method="post">
                     <input type="hidden" value="<?php echo $inquiry['id'] ?>">
-                    <textarea name="reply"></textarea>
+                    <textarea name="reply"></textarea><br>
                     <button class="btn btn-primary" type="submit">Reply</button>
                 </form>
             <?php endif; ?>

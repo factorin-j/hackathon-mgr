@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `inquiry` (
 
 
 CREATE TABLE IF NOT EXISTS `inquiry_report` (
-  `id`         INT UNSIGNED NOT NULL,
+  `id`         INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `inquiry_id` INT UNSIGNED NOT NULL,
   `reply`      TINYTEXT     NOT NULL,
   `created`    TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,

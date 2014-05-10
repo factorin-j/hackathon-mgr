@@ -27,9 +27,9 @@ class InquiryController extends AppController
         $con->begin();
         try {
             $inquiry = Inquiry::get($id);
-            Mail::send($inquiry->email, $inquiry->id, $reply);
-            InquiryReport::doLog($inquiry->id, $reply);
-            Inquiry::resolve($inquiry->id);
+            Mail::send($inquiry[''], $inquiry['id'], $reply);
+            InquiryReport::doLog($inquiry['id'], $reply);
+            Inquiry::resolve($inquiry['id']);
         } catch (Exception $e) {
             $con->rollback();
             throw $e;
