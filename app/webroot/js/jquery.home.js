@@ -28,6 +28,8 @@ $(function() {
                 // TODO >> Update DOM score value
                 console.log("+1");
                 window.location.reload();
+            } else {
+                alert("Message has been voted already");
             }
         }).fail(function() {
             console.log('BLOCK FAILED');
@@ -42,6 +44,8 @@ $(function() {
                 // TODO >> Update DOM score value
                 console.log("-1");
                 window.location.reload();
+            } else {
+                alert("Message has been voted already");
             }
         }).fail(function() {
             console.log('BLOCK FAILED');
