@@ -67,7 +67,7 @@ class Feed extends AppModel
     {
         $db = DB::conn();
         $feed_list = array();
-        $feeds = $db->rows('SELECT * FROM feed LEFT JOIN block_list ON block_list.token = feed.token WHERE block_list.token IS NULL ORDER BY created DESC');
+        $feeds = $db->rows('SELECT *, feed.token FROM feed LEFT JOIN block_list ON block_list.token = feed.token WHERE block_list.token IS NULL ORDER BY created DESC');
         if ($feeds) {
             foreach ($feeds as $feed) {
                 $feed_list[] = new self($feed);
@@ -80,7 +80,7 @@ class Feed extends AppModel
     {
         $db = DB::conn();
         $feed_list = array();
-        $feeds = $db->rows('SELECT *, (score/POWER(((NOW()-created)/60)/60,1.8)) AS rank FROM feed LEFT JOIN block_list ON block_list.token = feed.token WHERE block_list.token IS NULL ORDER BY rank DESC');
+        $feeds = $db->rows('SELECT *, feed.token, (score/POWER(((NOW()-created)/60)/60,1.8)) AS rank FROM feed LEFT JOIN block_list ON block_list.token = feed.token WHERE block_list.token IS NULL ORDER BY rank DESC');
         if ($feeds) {
             foreach ($feeds as $feed) {
                 $feed_list[] = new self($feed);

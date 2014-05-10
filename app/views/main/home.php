@@ -38,7 +38,7 @@
 </thead>
 <tbody>
 <?php foreach ($feeds as $feed) : ?>
-<tr>
+<tr data-token="<?php eh($feed->token) ?>">
     <td><?php eh($feed->message) ?></td>
     <td><img src="<?php eh($feed->picture) ?>" alt="user-image" /></td>
     <td><?php eh($feed->location) ?></td>

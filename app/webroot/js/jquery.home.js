@@ -11,7 +11,8 @@ $(function() {
             result = $.parseJSON(data);
             if (result.is_success) {
                 // TODO >> Remove all that has the same token
-                $(self).closest("tr").detach();
+                var token = $(self).closest("tr").attr('data-token');
+                $("[data-token=" + token + "]").detach();
             }
         }).fail(function() {
             console.log('BLOCK FAILED');
@@ -26,6 +27,7 @@ $(function() {
             if (result.is_success) {
                 // TODO >> Update DOM score value
                 console.log("+1");
+                window.location.reload();
             }
         }).fail(function() {
             console.log('BLOCK FAILED');
@@ -39,6 +41,7 @@ $(function() {
             if (result.is_success) {
                 // TODO >> Update DOM score value
                 console.log("-1");
+                window.location.reload();
             }
         }).fail(function() {
             console.log('BLOCK FAILED');
