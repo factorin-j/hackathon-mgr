@@ -29,3 +29,27 @@ CREATE TABLE IF NOT EXISTS `vote_status` (
 `token` CHAR(32) NOT NULL,
 PRIMARY KEY (feed_id, token)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `inquiry` (
+  `id`        INT UNSIGNED NOT NULL,
+  `phone`     CHAR(10),
+  `email`     VARCHAR(50),
+  `message`   TINYTEXT     NOT NULL,
+  `is_solved` TINYINT DEFAULT '0',
+  `created`   TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB
+  DEFAULT CHARSET =utf8;
+
+
+CREATE TABLE IF NOT EXISTS `inquiry_report` (
+  `id`         INT UNSIGNED NOT NULL,
+  `inquiry_id` INT UNSIGNED NOT NULL,
+  `reply`      TINYTEXT     NOT NULL,
+  `created`    TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB
+  DEFAULT CHARSET =utf8;
